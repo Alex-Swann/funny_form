@@ -5,15 +5,39 @@
     app = express(),
     home = require('./routes/home'),
     port = process.env.PORT;
+    var path = require('path');
 
-  app.set('view engine', 'njk');
+    var hof = require('hof');
+    var wizard = hof.wizard;
 
-  nunjucks.configure(__dirname + '/views', {
-    watch: true,
-    express: app
-  });
+    require('hof').template.setup(app);
+    app.set('view engine', 'html');
+    app.set('views', path.resolve(__dirname, './views'));
+    app.enable('view cache');
+    app.use(require('express-partial-templates')(app));
+    app.engine('html', require('hogan-express-strict'));
 
-  app.use(express.static('./app/public'));
+    app.use(require('body-parser').urlencoded({extended: true}));
+    app.use(require('body-parser').json());
+
+    app.use(function setBaseUrl(req, res, next) {
+      res.locals.baseUrl = req.baseUrl;
+      next();
+    });
+
+    // Trust proxy for secure cookies
+    app.set('trust proxy', 1);
+
+
+  // app.set('view engine', 'njk');
+  //
+  // nunjucks.configure(__dirname + '/views', {
+  //   watch: true,
+  //   express: app
+  // });
+
+  // app.use(express.static('./app/public'));
+  app.use('/public', express.static(path.resolve(__dirname, './public')));
 
   app.use('/', home);
 
