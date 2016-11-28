@@ -1,0 +1,28 @@
+{
+  "name": "funny_form",
+  "version": "1.0.0",
+  "description": "An amusing form simulating a Home Office HOF form",
+  "main": "server.js",
+  "scripts": {
+    "start": "PORT=4000 node app/server.js && node ./bin/www",
+    "test": "PORT=4001 ./node_modules/.bin/mocha --recursive"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Alex-Swann/funny_form.git"
+  },
+  "author": "Alex Swann",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Alex-Swann/funny_form/issues"
+  },
+  "homepage": "https://github.com/Alex-Swann/funny_form#readme",
+  "dependencies": {
+    "express": "^4.14.0",
+    "nunjucks": "^3.0.0"
+  },
+  "devDependencies": {
+    "mocha": "^3.2.0",
+    "zombie": "^5.0.5"
+  }
+}
