@@ -1,0 +1,5 @@
+node_modules
+reports
+public/js/bundle.js
+acceptance_tests
+apps/**/translations/**/default.json
