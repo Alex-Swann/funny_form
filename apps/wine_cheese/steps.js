@@ -6,7 +6,6 @@ module.exports = {
     next: '/choices'
   },
   '/choices': {
-    controller: require('./controllers/choices'),
     template: 'choices',
     fields: [
       'yes-no-radio-toggler',
