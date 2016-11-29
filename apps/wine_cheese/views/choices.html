@@ -1,5 +1,4 @@
 {{<layout}}
-{{$step}}Step 2 of 5{{/step}}
 
 {{$journeyHeader}}
 {{#t}}journey.header{{/t}}
@@ -13,7 +12,7 @@
 {{> partials-navigation}}
 {{/propositionHeader}}
 
-{{$header}}{{#t}}pages.second-page.header{{/t}}{{/header}}
+{{$header}}{{#t}}pages.choices.header{{/t}}{{/header}}
 
 {{$content}}
 
@@ -23,11 +22,10 @@
 
 
 <fieldset id="yes-no-radio-toggler-group" class="panel-indent {{#errors.yes-no-radio-toggler}}validation-error{{/errors.yes-no-radio-toggler}}">
-    <h1>These radio buttons toggle a hidden field</h1>
-    {{#radio-group}}yes-no-radio-toggler{{/radio-group}}
-    <h1>Example toggled text input</h1>
+    <h1>Do you like cheese?</h1>
+
     <div id="example-toggled-text-div">
-        {{#input-text}}example-toggled-text{{/input-text}}
+        <h2>...with wine?</h2>
     </div>
 </fieldset>
 
