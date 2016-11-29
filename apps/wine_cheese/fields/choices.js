@@ -13,7 +13,15 @@ module.exports = {
       label: 'No'
     }]
   },
-  'example-toggled-text': {
-    legend: 'fields.toggled-text.legend'
+  'yes-no-radio': {
+    validate: ['required'],
+    className: ['inline', 'form-group'],
+    options: [{
+      value: 'Yes',
+      label: 'Yes'
+    }, {
+      value: 'No',
+      label: 'No'
+    }]
   }
 };

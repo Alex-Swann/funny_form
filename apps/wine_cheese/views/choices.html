@@ -20,12 +20,12 @@
 
 {{$form}}
 
-
 <fieldset id="yes-no-radio-toggler-group" class="panel-indent {{#errors.yes-no-radio-toggler}}validation-error{{/errors.yes-no-radio-toggler}}">
     <h1>Do you like cheese?</h1>
-
-    <div id="example-toggled-text-div">
-        <h2>...with wine?</h2>
+      {{#radio-group}}yes-no-radio-toggler{{/radio-group}}
+    <div id="example-toggled-text-div" class="{{#errors.yes-no-radio}}validation-error{{/errors.yes-no-radio}}">
+      <h2>...with wine?</h2>
+      {{#radio-group}}yes-no-radio{{/radio-group}}
     </div>
 </fieldset>
 
